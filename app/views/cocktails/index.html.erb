@@ -1,0 +1,20 @@
+<div class="main mb-6" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.mtl.org/sites/default/files/styles/playlist_banner_big/public/2020-04/45441.jpg?h=f8c4e648&itok=UihvhxLK);">
+  <div class="container">
+    <h1>Because you deserve it <strong></h1>
+    <p>Change your life and learn to create your drinks.</p>
+    <%= link_to "Create a drink", new_cocktail_path, class:"btn btn-outline-light" %>
+  </div>
+</div>
+<div class="container">
+  <h1>Listed coctails</h1>
+  <div class="cards-grid">
+    <%@cocktails.each do |cocktail|%>
+      <div class="card">
+      <img src="" alt="">
+        <div class="info">
+          <h3><%= link_to cocktail.name, cocktail_path(cocktail)%></h3>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
