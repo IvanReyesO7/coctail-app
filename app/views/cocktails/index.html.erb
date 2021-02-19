@@ -6,15 +6,21 @@
   </div>
 </div>
 <div class="container">
-  <h1>Listed coctails</h1>
+  <h1 class="h1title">Listed coctails</h1>
   <div class="cards-grid">
     <%@cocktails.each do |cocktail|%>
-      <div class="card">
-      <img src="" alt="">
+      <% if cocktail.photo.attached? %>
+        <div class="drinkcard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <%else%> 
+         <div class="card">
+      <%end%>
         <div class="info">
           <h3><%= link_to cocktail.name, cocktail_path(cocktail)%></h3>
         </div>
       </div>
     <%end%>
+    
+<!-- for face detection -->
   </div>
-</div>
+  
+ </div>
